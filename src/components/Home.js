@@ -8,6 +8,10 @@ function Home() {
   const [res, setRes] = useState("");
   const buttons = ["c","9","/","8", "7", "6","*","5","4","3","+","2","1","0","-",".","DEL","="];
   const handler = (arg) => {
+    if (res === "infinity") {
+      setRes ("");
+      return;
+    }
     if (arg == "c") setRes ("");
     else if (arg == "=") findval ();
     else if (arg == "DEL") {
